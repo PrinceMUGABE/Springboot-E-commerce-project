@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid text-center mt-4">
+    <div class="card">
+        <div class="card-header"><h2>Order Here</h2></div>
+        <div class="card-body">
+            <form th:action="@{/order/save}" method="POST" th:object="${order}">
+                <div class="form-group">
+                    <label for="Address">Adderess</label>
+                    <input type="text" name="address" th:field="*{address}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="fullNames">FullNames</label>
+                    <input type="text" name="address" th:field="*{fullnames}" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="number" name="number"th:field="*{phone}" class="form-control" />
+                </div>
+                <input class="btn btn-primary" type="submit" th:value="Order">
+            </form>
+        </div>
+    </div>
+</div>
+<!--<div class="container-fluid">-->
+<!--    <div class="row d-flex">-->
+<!--        <div class="col">-->
+
+<!--        </div>-->
+<!--        <div class="col">-->
+
+
+<!--        </div>-->
+<!--    </div>-->
+</div>
+</body>
+</html>
